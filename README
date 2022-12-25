@@ -1,0 +1,18 @@
+OPCODER
+
+Opcoder is a web application that allows users to filter instructions
+from http://ref.x86asm.net/coder64.html based on user-provided bytes.
+This tool is designed to help with writing shellcode with restrictions
+beyond null bytes. Please note that there may be known flaws in this tool,
+I will address them if I have free time. You contribution is much appreciated.
+
+Getting Started
+
+To use Opcoder, simply go to the webpage and input a string of bytes in the
+textarea provided. Select the appropriate delimiter from the options and
+specify whether the bytes are "good" or "bad." Then, click the "Load" button
+to generate the table.
+
+License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
