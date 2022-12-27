@@ -88,8 +88,7 @@ function fillTable(table, userBytes) {
 }
 
 function emptyTable() {
-  var rows = table.rows;
-  var i = rows.length;
+  var i = table.rows.length;
   while (--i) {
     rows[i].parentNode.removeChild(rows[i]);
     // or
@@ -124,23 +123,23 @@ function parseInput(ta, radio) {
   var input;
   var delimiter = returnCheck(radio);
   if (!ta.length) return error("Enter some bytes.");
-  ta = ta.toUpperCase();
+  ta = ta.toUpperCase().trim();
 
   if (delimiter == -1) {
     // console.log("it was here");
     return error("Select Delimiter type");
   } else if (delimiter == "slashx") {
-    input = ta.trim().replaceAll("\\X", "");
+    input = ta.replaceAll("\\X", "");
   } else if (delimiter == "zerox") {
-    input = ta.trim().slice(2);
+    input = ta.slice(2);
   } else if (delimiter == "space") {
-    input = ta.trim().replaceAll(" ", "");
+    input = ta.replaceAll(" ", "");
   } else if (delimiter == "zeroxcomma") {
-    input = ta.trim().replaceAll("0X", "").replaceAll(",", "");
+    input = ta.replaceAll("0X", "").replaceAll(",", "");
   } else if (delimiter == "zeroxspace") {
-    input = ta.trim().replaceAll("0X", "").replaceAll(" ", "");
+    input = ta.replaceAll("0X", "").replaceAll(" ", "");
   } else if (delimiter == "empty") {
-    input = ta.trim().replaceAll(" ", "");
+    input = ta.replaceAll(" ", "");
   }
   input = input.match(/.{1,2}/g).filter((e) => e);
   for (var i = 0; i < input.length; i++) {
