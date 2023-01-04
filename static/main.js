@@ -90,7 +90,7 @@ function fillTable(table, userBytes) {
 function emptyTable() {
   var i = table.rows.length;
   while (--i) {
-    rows[i].parentNode.removeChild(rows[i]);
+    table.rows[i].parentNode.removeChild(table.rows[i]);
     // or
     // table.deleteRow(i);
   }
